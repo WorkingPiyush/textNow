@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-Now</title>
+</head>
+
+<body>
+    <h1>Text-Now</h1>
+    <div>
+        <form id="form">
+            <input type="text" placeholder="Name" id="name">
+            <input type="text" placeholder="Message" id="message">
+            <input type="submit" value="Send" id="submit">
+        </form>
+        <div id="message-area"></div>
+    </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    let socket = io();
+    const form = document.getElementById('form');
+    const name = document.getElementById('name');
+    const message = document.getElementById('message');
+    const submit = document.getElementById('submit');
+    const messageArea = document.getElementById('message-area');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (message.value) {
+            socket.emit('send-name', name.value);
+            socket.emit('send-msg', message.value);
+            message.value = "";
+        }
+    });
+    socket.on('send-name', (username) => {
+        let name = document.createElement("p");
+        name.textContent = username
+        // console.log("username", username)
+        messageArea.appendChild(name);
+    });
+    socket.on('send-msg', (chat) => {
+        let chatContent = document.createElement('p');
+        chatContent.textContent = chat;
+        // console.log("chat", chat)
+        messageArea.appendChild(chatContent);
+    });
+</script>
+
+</html>
