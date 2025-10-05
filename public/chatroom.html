@@ -20,12 +20,21 @@
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-    let socket = io();
+    let socket = io("http://localhost:2001", {
+        auth: {
+            token: localStorage.getItem("token")
+        }
+    });
+    socket.on("connect", () => {
+        console.log('User Connected with ID: ', socket.id)
+    })
+
     const form = document.getElementById('form');
     const name = document.getElementById('name');
     const message = document.getElementById('message');
     const submit = document.getElementById('submit');
     const messageArea = document.getElementById('message-area');
+    
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         if (message.value) {

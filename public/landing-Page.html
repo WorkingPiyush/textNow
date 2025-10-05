@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text-Now – Connect Instantly</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #0d1b2a;
+    }
+
+    header {
+      background-color: #0a84ff;
+      color: white;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      color: #0a84ff;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: #333;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .hero button {
+      background-color: #0a84ff;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.8rem;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      background-color: #0066cc;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 4rem 2rem;
+      background-color: #f8faff;
+    }
+
+    .feature {
+      background-color: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      width: 280px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature h3 {
+      color: #0a84ff;
+      margin-bottom: 1rem;
+    }
+
+    .feature p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #0a84ff;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Text-Now</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">About</a>
+      <a href="#">Login</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Chat. Connect. Collaborate.</h2>
+    <p>Experience real-time communication like never before. Fast, secure, and built for simplicity. Stay connected with your friends, team, or community.</p>
+    <button>Get Started</button>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>💬 Real-Time Chat</h3>
+      <p>Instant messaging that keeps you connected with everyone, anytime.</p>
+    </div>
+    <div class="feature">
+      <h3>🔒 Secure & Private</h3>
+      <p>Your chats are encrypted to ensure full privacy and safety.</p>
+    </div>
+    <div class="feature">
+      <h3>⚡ Lightning Fast</h3>
+      <p>Optimized performance for smooth, real-time communication.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Text-Now. All rights reserved.
+  </footer>
+</body>
+</html>
